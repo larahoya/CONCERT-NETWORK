@@ -1,0 +1,23 @@
+<section class='search-form'>
+  <h2>Search concerts by price</h2>
+
+  <form action='/search' method='POST'>
+    <input type='text' placeholder='Enter the maximum price' name='max_price'>
+    <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token %>">
+    <button type="submit">Search!</button>
+  </form>
+
+</section>
+
+<% if @selected_concerts %>
+
+<section class='search-results'>
+  <h2>Results</h2>
+  <ul>
+    <% @selected_concerts.each do |concert| %>
+      <li><%= link_to("#{concert.band},  #{concert.date.strftime("%d-%m-%y")} (price: #{concert.price})", concert_path(concert.id)) %></li>
+    <% end %>
+  </ul>
+</section>
+
+<% end %>

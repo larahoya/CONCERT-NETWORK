@@ -1,0 +1,43 @@
+<section>
+<h2><%= @concert.band %></h2>
+<h4><%= @concert.venue %>, <%= @concert.city %>, <%= @concert.date %></h4>
+<p><%= @concert.description %></p>
+<p><%= @concert.price %></p>
+</section>
+
+<section class='comment-form'>
+  <%= flash_message %>
+
+<% if @errors %>
+<ul class='errors'>
+  <% @errors.each do |error| %>
+    <li><%= error %></li>
+  <% end %>
+</ul>
+<% end %>
+<br>
+
+<%= form_for [@concert, @comment] do |f| %>
+
+<%= f.label :user %>
+<%= f.text_field :user %>
+<br>
+<%= f.label :text %>
+<%= f.text_field :text %>
+<br>
+
+<%= f.submit :save %>
+
+<% end %>
+</section>
+
+<section class='comment-section'>
+  <% @concert_comments.each do |comment| %>
+    <div class='comment'>
+      <h5><%= comment.user %></h5>
+      <p><%= comment.text %></p>
+    </div> 
+  <% end %> 
+</section>
+
+<%= link_to('Back', concerts_path) %>

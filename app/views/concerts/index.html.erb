@@ -1,0 +1,11 @@
+<h2>Concerts</h2>
+
+<ul>
+
+<% @concerts.each do |concert| %>
+  <li><%= link_to("#{concert.band},  #{concert.date.strftime("%d-%m-%y")} ", concert_path(concert.id)) %></li>
+<% end %>
+
+</ul>
+
+<%= link_to('Create a new concert', new_concert_path) %>

@@ -1,0 +1,22 @@
+<h2>Home</h2>
+
+<aside>
+  <h4>Later this month</h4>
+  <ul>
+    <% @month_concerts.each do |concert| %>
+      <li><%= link_to("#{concert.band},  #{concert.date.strftime("%d-%m-%y")} ", concert_path(concert.id)) %></li>
+    <% end %>
+  </ul>
+</aside>
+
+
+<section>
+  <h4>Today concerts</h4>
+  <ul>
+    <% @today_concerts.each do |concert| %>
+      <li><%= link_to("#{concert.band},  #{concert.date.strftime("%d-%m-%y")} ", concert_path(concert.id)) %></li>
+    <% end %>
+  </ul>
+</section>
+
+<%= link_to('All the concerts', concerts_path) %>
