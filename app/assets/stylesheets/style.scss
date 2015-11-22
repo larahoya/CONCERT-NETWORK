@@ -1,0 +1,45 @@
+.header-row {
+  height: 70px;
+  background-color: #BDBDBD;
+}
+
+.footer-row {
+  height: 50px;
+  background-color: #BDBDBD;
+}
+
+.header-title {
+  font-size: 20px;
+}
+
+.header-nav {
+  margin-left: 780px;
+  padding: 20px;
+  font-size: 16px;
+}
+
+.header-nav li {
+  margin-left: 25px;
+}
+
+.header-nav li a {
+  color: black;
+}
+
+.aside {
+  background-color: #AACDF4;
+  height: 700px;
+}
+
+.box {
+  border: 1px solid black;
+  height: 630px;
+  border-radius: 15px;
+  padding: 15px;
+}
+
+.box img {
+  width: 100%;
+  padding-bottom: 30px;
+  padding-top: 30px;
+}

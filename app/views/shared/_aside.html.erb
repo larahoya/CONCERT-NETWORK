@@ -1,0 +1,9 @@
+<section class='aside col-xs-3'>
+
+<h4>Later this month</h4>
+<ul>
+  <% @month_concerts.each do |concert| %>
+    <li><%= link_to("#{concert.band},  #{concert.date.strftime("%d-%m-%y")} ", concert_path(concert.id)) %></li>
+  <% end %>
+</ul>   
+</section>

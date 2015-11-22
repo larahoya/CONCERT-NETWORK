@@ -1,10 +1,12 @@
 class ConcertsController < ApplicationController
 
   def index
+    @month_concerts = Concert.get_month_concerts
     @concerts = Concert.all
   end
 
   def new
+    @month_concerts = Concert.get_month_concerts
     @concert = Concert.new
   end
 
@@ -21,9 +23,11 @@ class ConcertsController < ApplicationController
   end
 
   def show
+    @month_concerts = Concert.get_month_concerts
     @concert = Concert.find(params[:id])
     @comment = @concert.comments.new
     @concert_comments = @concert.comments
+  end
 
   private
 

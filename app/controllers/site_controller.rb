@@ -6,6 +6,7 @@ class SiteController < ApplicationController
   end
 
   def search
+    @month_concerts = Concert.get_month_concerts
     if params[:max_price]
       max_price = params[:max_price].to_i
       @selected_concerts = Concert.get_concerts_by_max_price(max_price)
@@ -13,6 +14,7 @@ class SiteController < ApplicationController
   end
 
   def popular
+    @month_concerts = Concert.get_month_concerts
     @selected_concerts = Concert.sort_concerts[0...10]
   end
 
